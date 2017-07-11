@@ -1,16 +1,138 @@
 {
   "rules": {
+    "businesses": {
     ".read": "true",
     ".write": "true",
-    "contacts": {
-            "$contact": {
+      "$business": {
                 "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
+                  ".validate": "newData.isString()
+                  &
+                  &
+                  newData
+                  .
+                  val
+                  (
+                  )
+                  .
+                  length
+                  <
+                  48
+                  &
+                  &
+                  newData
+                  .
+                  val
+                  (
+                  )
+                  .
+                  length
+                  >
+                  2
+                  "
                 },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
+        "business number": {
+          ".validate": "newData.isNumber()
+          &
+          &
+          newData
+          .
+          val
+          (
+          )
+          >
+          99999999
+          &
+          &
+          newData
+          .
+          val
+          (
+          )
+          <
+          1000000000
+          "
+        },
+        "primary business": {
+          ".validate": "newData.isString()
+          &
+          &
+          newData
+          .
+          val
+          (
+          )
+          .
+          toLowerCase
+          (
+          )
+          .
+          matches
+          (
+          /
+          ^
+          fisher
+          |
+          distributor
+          |
+          processor
+          |
+          fish
+          monger
+          /
+          )
+          "
+        },
+        "address": {
+          ".validate": "newData.isString() && newData.val().length <50"
+        },
+        "province": {
+          ".validate": "newData.isString()
+          &
+          &
+          newData
+          .
+          val
+          (
+          )
+          .
+          toUpperCase
+          (
+          )
+          .
+          matches
+          (
+          /
+          ^
+          AB
+          |
+          BC
+          |
+          MB
+          |
+          NB
+          |
+          NL
+          |
+          NS
+          |
+          NT
+          |
+          NU
+          |
+          ON
+          |
+          PE
+          |
+          QC
+          |
+          SK
+          |
+          YT
+          /
+          )
+          "
                 }
             }
         }
   }
-}
+}}
