@@ -37,6 +37,11 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     * Updates the contact, sends the update to Firebase
+     *
+     * @param v view clicked on
+     */
     public void updateContact(View v){
         receivedPersonInfo.updateData(addressField.getText().toString(),
                 nameField.getText().toString(),
@@ -51,6 +56,12 @@ public class DetailViewActivity extends Activity {
         Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Erases the business from the database
+     * Clears the UI to reflect this
+     *
+     * @param v view clicked on
+     */
     public void eraseContact(View v)
     {
         appState.firebaseReference.child(receivedPersonInfo.id).removeValue();

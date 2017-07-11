@@ -31,6 +31,11 @@ public class CreateContactAcitivity extends Activity {
 
     }
 
+    /**
+     * Submits a new user entry into firebase
+     *
+     * @param v the view clicked on
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String personID = appState.firebaseReference.push().getKey();

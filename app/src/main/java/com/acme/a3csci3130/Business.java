@@ -24,7 +24,7 @@ class Business implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Business(String id, String address, String name, String province, int businessNumber, String primaryBusiness) {
+    Business(String id, String address, String name, String province, int businessNumber, String primaryBusiness) {
         this.id = id;
         this.address = address;
         this.name = name;
@@ -33,7 +33,16 @@ class Business implements Serializable {
         this.primaryBusiness = primaryBusiness;
     }
 
-    public void updateData(String address, String name, String province, int businessNumber, String primaryBusiness) {
+    /**
+     * Updates the data for the business
+     *
+     * @param address         new address, string
+     * @param name            new name, string
+     * @param province        new province, string
+     * @param businessNumber  new business number, int
+     * @param primaryBusiness new primary business, string
+     */
+    void updateData(String address, String name, String province, int businessNumber, String primaryBusiness) {
         this.address = address;
         this.name = name;
         this.province = province;
